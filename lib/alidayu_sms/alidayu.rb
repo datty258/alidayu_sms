@@ -42,8 +42,10 @@ module AlidayuSms
     end
 
     private
-    def sort_options(**arg)
-      arg.sort_by{|k,v| k}.to_h
+    def sort_options(arg)
+      hash = Hash.new
+      arg.sort.map{|e| hash[e[0]] = e[1] }
+      hash
     end
 
     def 加密(**arg)
